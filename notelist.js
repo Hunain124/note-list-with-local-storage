@@ -6,14 +6,19 @@ let password = document.querySelector("#password");
 
 function login_form() {
     if (!email.value || !password.value) {
-        return alert("Please add email & password");
+        return Swal.fire({
+            title: "false!",
+            text: "Please add email & password",
+            icon: "false",
+            confirmButtonText: "NO"
+        });
     }
-    localStorage.setItem("email", email.value);
+    sessionStorage.setItem("email", email.value);
     checkIsUserLogin();
 }
 
 function checkIsUserLogin() {
-    let storedEmail = localStorage.getItem("email"); // Fixed key name
+    let storedEmail = sessionStorage.getItem("email"); // Fixed key name
     if (storedEmail) {
         form_parent.style.display = "none";
         homecontainner.style.display = "block";
