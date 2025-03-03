@@ -7,7 +7,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-body{
+.signup{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@ body{
     background: #23252a;
 }
 
-.box {
+.box { 
     position: relative;
     width: 380px;
     height: 450px;
@@ -52,7 +52,7 @@ body{
     animation-delay: -3s;
 }
 
-.borderLine::before{
+.borderLine::before {
     content: '';
     position: absolute;
     top: -50%;
@@ -66,8 +66,7 @@ body{
     animation-delay: -1.5s;
 }
 
-.borderLine::after
-{
+.borderLine::after {
     content: '';
     position: absolute;
     top: -50%;
@@ -81,16 +80,15 @@ body{
     animation-delay: -4.5s;
 }
 
-
 @keyframes animate {
     0% {
-        transform-origin: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-        transform-origin: rotate(360deg);
+        transform: rotate(360deg);
     }
-    
 }
+
 
 .box .login{
     position: absolute;

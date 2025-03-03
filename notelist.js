@@ -1,7 +1,8 @@
-let signup = document.querySelector(".signup");
+let form_parent = document.querySelector(".form_parent");
 let homecontainner = document.querySelector(".homecontainner"); // Added missing dot (.)
 let email = document.querySelector("#email");
 let password = document.querySelector("#password");
+
 
 function login_form() {
     if (!email.value || !password.value) {
@@ -14,10 +15,10 @@ function login_form() {
 function checkIsUserLogin() {
     let storedEmail = localStorage.getItem("email"); // Fixed key name
     if (storedEmail) {
-        signup.style.display = "none";
+        form_parent.style.display = "none";
         homecontainner.style.display = "block";
     } else {
-        signup.style.display = "block";
+        form_parent.style.display = "block";
         homecontainner.style.display = "none";
     }
 }
