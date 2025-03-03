@@ -34,7 +34,7 @@ body{
     height: 420px;
     background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
     z-index: 1;
-    trans.login-origin: bottom right;
+    transform-origin: bottom right;
     animation: animate 6s linear infinite;
 }
 
@@ -47,7 +47,7 @@ body{
     height: 420px;
     background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
     z-index: 1;
-    trans.login-origin: bottom right;
+    transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
 }
@@ -61,7 +61,7 @@ body{
     height: 420px;
     background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
     z-index: 1;
-    trans.login-origin: bottom right;
+    transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -1.5s;
 }
@@ -76,7 +76,7 @@ body{
     height: 420px;
     background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
     z-index: 1;
-    trans.login-origin: bottom right;
+    transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -4.5s;
 }
@@ -84,10 +84,10 @@ body{
 
 @keyframes animate {
     0% {
-        trans.login: rotate(0deg);
+        transform-origin: rotate(0deg);
     }
     100% {
-        trans.login: rotate(360deg);
+        transform-origin: rotate(360deg);
     }
     
 }
@@ -146,7 +146,7 @@ body{
 .box .login .inputBox input:focus ~ span {
     color: #fff;
     font-size: 0.75em;
-    trans.login: translateY((-34px));
+    transform-origin: translateY((-34px));
 }
 
 .box .login .inputBox i{
