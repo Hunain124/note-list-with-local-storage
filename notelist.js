@@ -19,8 +19,11 @@ function checkIsUserLogin() {
     if (storedEmail) {
         form_parent.style.display = "none";
         homecontainner.style.display = "block";
-        userEmail.textContent = storedEmail
-    } else {
+        userEmail.innerHTML = storedEmail
+        displayUserNotes()
+    } else if(!storedEmail) {
+        console.log(storedEmail);
+        
         form_parent.style.display = "block";
         homecontainner.style.display = "none";
     }
