@@ -197,3 +197,45 @@
 #submit:active{
     opacity: 0.8;
 }
+.homecontainner{
+    display: flex !important;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+.right{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+button{
+    padding:10px 15px 10px 15px;
+    font-size: 14px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+button:hover{
+    padding:10px 15px 10px 15px;
+    font-size: 14px;
+    background-color:transparent;
+    color: red;
+    transition: 0.2s ease-in-out;
+    border: 1px solid red;
+    border-radius: 20px;
+}
+.mainText{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 20px;
+}
+.textArea{
+    width:70%;
+    height: 100px;
+    padding: 10px;
+}
+.btn1{
+    width: 30%;
+}

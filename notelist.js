@@ -2,26 +2,24 @@ let form_parent = document.querySelector(".form_parent");
 let homecontainner = document.querySelector(".homecontainner"); // Added missing dot (.)
 let email = document.querySelector("#email");
 let password = document.querySelector("#password");
+let userEmail = document.querySelector("#userEmail");
+let note = document.querySelector("#note");
 
 
 function login_form() {
     if (!email.value || !password.value) {
-        return Swal.fire({
-            title: "false!",
-            text: "Please add email & password",
-            icon: "false",
-            confirmButtonText: "NO"
-        });
+        return alert("Please add email & password")
     }
-    sessionStorage.setItem("email", email.value);
+    localStorage.setItem("email", email.value);
     checkIsUserLogin();
 }
 
 function checkIsUserLogin() {
-    let storedEmail = sessionStorage.getItem("email"); // Fixed key name
+    let storedEmail = localStorage.getItem("email"); // Fixed key name
     if (storedEmail) {
         form_parent.style.display = "none";
         homecontainner.style.display = "block";
+        userEmail.textContent = storedEmail
     } else {
         form_parent.style.display = "block";
         homecontainner.style.display = "none";
@@ -29,3 +27,47 @@ function checkIsUserLogin() {
 }
 
 checkIsUserLogin();
+
+function logout (){
+    localStorage.removeItem("email")
+        checkIsUserLogin();
+}
+
+function submit(){
+    let email = localStorage.getItem("email");
+    let obj = {
+        email : email,
+        note : note.value
+    }
+    saveValueToLocalStorage(obj)
+    note.value="";
+}
+
+function saveValueToLocalStorage(obj) {
+    let notes = localStorage.getItem("notes");
+    if (notes) {
+        notes = JSON.parse(notes);
+        notes.push(obj);
+        localStorage.setItem("notes", JSON.stringify(notes));
+    } else {
+        notes = [obj];
+        localStorage.setItem("notes", JSON.stringify(notes));
+    }
+    displayUserNotes()
+}
+
+function displayUserNotes(){
+    let notes = localStorage.getItem("notes");
+    let list = document.querySelector("#list")
+    list.innerHTML = "";
+    if(notes){
+        notes = JSON.parse(notes);
+        notes.forEach(function(data , ind){
+            var liElement =`<li>${data.note}
+            <p>${data.email}</p>
+            </li>`;
+            list.innerHTML += liElement;
+        })
+    }
+}
+displayUserNotes()
