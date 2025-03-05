@@ -258,3 +258,9 @@ ul#list {
     flex-direction: column;
     gap: 20px !important;
 }
+
+@media(max-width:425px){
+    .top {
+        flex-wrap: wrap;
+    }
+}
