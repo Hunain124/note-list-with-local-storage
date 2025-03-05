@@ -66,7 +66,7 @@ function displayUserNotes(){
     if(notes){
         notes = JSON.parse(notes);
         notes.forEach(function(data , ind){
-            var liElement =`<li>${data.note}
+            var liElement =`<li style="border:1px solid red; list-style:none; padding:10px;">${data.note}
             <p>${data.email}</p>
             </li>`;
             list.innerHTML += liElement;
