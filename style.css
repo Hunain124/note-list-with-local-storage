@@ -253,3 +253,8 @@ button:hover{
     display: flex !important;
     gap: 20px;
 } */
+ul#list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px !important;
+}
