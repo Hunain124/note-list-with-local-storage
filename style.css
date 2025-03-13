@@ -224,6 +224,7 @@ button{
     color: white;
     border: none;
     border-radius: 20px;
+    border : 1px solid red;
 }
 button:hover{
     padding:10px 15px 10px 15px;
@@ -258,7 +259,14 @@ ul#list {
     flex-direction: column;
     gap: 20px !important;
 }
-
+/* .li_nodes{
+    background: red;
+    border-radius: 20px;
+    
+} */
+.mainText ul li{
+    list-style: none;
+}
 @media(max-width:425px){
     .top {
         flex-wrap: wrap;
